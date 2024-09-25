@@ -48,6 +48,7 @@ function choiceItem(event: React.MouseEvent<HTMLDivElement>) {
             label.classList.remove("select__label--default");
         }
     }
+    input?.dispatchEvent(new Event("change"));
 }
 
 let openedList: HTMLDivElement | null;
