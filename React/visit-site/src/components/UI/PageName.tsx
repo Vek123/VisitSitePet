@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 
 interface PageNameInterface {
@@ -6,8 +6,12 @@ interface PageNameInterface {
 }
 
 function PageName(props: PageNameInterface) {
+    let [clWidth, setClWidth] = React.useState(document.documentElement.clientHeight);
+    useEffect(() => {
+        window.addEventListener("resize", () => setClWidth(document.documentElement.clientHeight));
+    }, []);
     return (
-        <div className="page-name">{props.name}</div>
+        <div className="page-name" style={{width: clWidth}}>{props.name}</div>
     );
 }
 
