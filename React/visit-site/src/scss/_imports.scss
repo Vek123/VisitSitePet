@@ -1,0 +1,18 @@
+// Components
+@import './components/Header';
+@import './components/Footer';
+
+// Mixins
+@import './components/UI/BurgerIcon';
+@import './components/UI/IntextImage';
+@import './components/UI/PageName';
+@import './components/UI/TextInput';
+@import './components/UI/TextArea';
+@import './components/UI/Select';
+@import './components/UI/Checkbox';
+
+// Pages
+@import './components/pages/Ui';
+@import './components/pages/App';
+
+// Templates

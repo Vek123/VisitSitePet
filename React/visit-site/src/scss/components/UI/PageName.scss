@@ -1,0 +1,10 @@
+.page-name {
+    position: absolute;
+    top: 0;
+    left: 60px;
+    z-index: var(--z-background);
+    @include fontAdaptive(300px, 230px, 1000);
+    color: rgba(var(--color-main-light), .2);
+    transform: rotate(90deg) translateY(-50%);
+    transform-origin: left;
+}

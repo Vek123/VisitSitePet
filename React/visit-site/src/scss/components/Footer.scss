@@ -1,0 +1,32 @@
+.footer {
+    margin-top: auto;
+    background-color: rgb(var(--color-main));
+    color: rgb(var(--color-white));
+    @include fontAdaptive(16px, 21px, 500);
+    a {
+        color: rgb(var(--color-white));
+    }
+    .template-container {
+        width: 1400px;
+        padding: 0 50px;
+    }
+    &__inner {
+        padding: 50px 0;
+        height: 300px;
+        > ul {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+    &__nav, &__contacts {
+        display: flex;
+        flex-direction: column;
+        row-gap: 12px;
+        a {
+            transition: color var(--main-hover-delay);
+            &:hover {
+                color: rgb(var(--color-main-light))
+            }
+        }
+    }
+}

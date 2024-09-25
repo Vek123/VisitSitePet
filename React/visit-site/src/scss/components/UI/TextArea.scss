@@ -1,0 +1,107 @@
+.text-area {
+    --padding: 15px;
+    display: flex;
+    position: relative;
+    align-items: center;
+    &__input {
+        width: 100%;
+        border-radius: 25px;
+        border: 1px solid rgb(var(--color-grey-lighter));
+        padding: var(--padding);
+        padding-right: 40px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        transition: border-color var(--main-hover-delay);
+        &:focus, &:not(:placeholder-shown) {
+            ~ .text-area {
+                &__placeholder {
+                    top: 0;
+                    transform: scale(.7);
+                }
+            }
+        }
+    }
+    &__placeholder {
+        position: absolute;
+        left: var(--padding);
+        top: var(--padding);
+        color: rgb(var(--color-grey));
+        transition: transform var(--main-hover-delay-faster), top var(--main-hover-delay-faster);
+        transform-origin: left;
+        pointer-events: none;
+    }
+    &__icon {
+        content: "";
+        position: absolute;
+        right: var(--padding);
+        pointer-events: none;
+        opacity: 0;
+        visibility: hidden;
+        transition: visibility var(--main-hover-delay), opacity var(--main-hover-delay);
+    }
+    &__error-message {
+        position: absolute;
+        bottom: -12px;
+        background-color: rgb(var(--color-white));
+        width: calc(100% - 40px);
+        left: 50%;
+        border-radius: 10px;
+        border: 1px solid rgb(var(--color-grey-border-middle));
+        color: rgb(var(--color-grey));
+        padding: 40px 20px 20px;
+        transform: translate(-50%, 100%);
+        visibility: hidden;
+        opacity: 0;
+        @include fontAdaptive(18px, 21.09px, 400);
+        font-style: italic;
+        transition: visibility var(--main-hover-delay), opacity var(--main-hover-delay);
+        &::before, &::after {
+            content: "";
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-style: solid;
+        }
+        &::before {
+            border-width: 0 17.5px 13px;
+            border-color: transparent transparent rgb(var(--color-grey-border-middle));
+        }
+        &::after {
+            border-width: 0 15.5px 11.5px;
+            border-color: transparent transparent rgb(var(--color-white))
+        }
+    }
+    &--correct {
+        .text-area {
+            &__input {
+                border-color: rgb(var(--color-main));
+            }
+            &__icon {
+                content: url("../../../../public/icons/correct.svg");
+                visibility: visible;
+                opacity: 1;
+            }
+        }
+    }
+    &--error {
+        .text-area {
+            &__input {
+                border-color: rgb(var(--color-red));
+            }
+            &__icon {
+                content: url("../../../../public/icons/close-small-red.svg");
+                cursor: pointer;
+                pointer-events: unset;
+                visibility: visible;
+                opacity: 1;
+            }
+            &__error-message {
+                visibility: visible;
+                opacity: 1;
+            }
+        }
+    }
+}

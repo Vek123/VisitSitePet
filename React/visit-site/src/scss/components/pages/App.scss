@@ -1,0 +1,28 @@
+.about-site {
+    margin-top: 55px;
+    ol {
+        margin-bottom: 20px;
+        li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: flex-start;
+            &::before {
+                content: "";
+                display: inline-block;
+                background-color: rgb(var(--color-main));
+                border-radius: 50%;
+                width: 5px;
+                height: 5px;
+                margin-top: 7px;
+                margin-right: 10px;
+                flex-shrink: 0;
+            }
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
