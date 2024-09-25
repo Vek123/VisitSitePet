@@ -123,3 +123,19 @@ button {
   width: 1300px;
   margin: 0 auto;
 }
+@include desktop {
+  .template-container {
+    width: 1100px;
+  }
+}
+@include laptop {
+  .template-container {
+    width: 100vw;
+    padding: 0 30px
+  }
+}
+@include tablet {
+  .template-container {
+    padding: 0 20px;
+  }
+}
