@@ -53,10 +53,10 @@ function choiceItem(event: React.MouseEvent<HTMLDivElement>) {
 
 let openedList: HTMLDivElement | null;
 
-export default function Select(props: SelectProps) {
+export default function Select(props: SelectProps, kwargs: any) {
     return (
         <div className={`select ${props.className}`.trim()}>
-            <input id={props.inputId} type="radio" className="select__input" defaultValue={props.default ? props.default.data : "----"} data-default={props.default ? props.default.data : "----"} defaultChecked/>
+            <input id={props.inputId} type="radio" className="select__input" defaultValue={props.default ? props.default.data : "----"} data-default={props.default ? props.default.data : "----"} {...kwargs} defaultChecked/>
             <label className={props.default ? "select__label" : "select__label select__label--default"} htmlFor={props.inputId} onClick={openList}>{props.default ? props.default.data : "----"}</label>
             <div className="select__icon"></div>
             <div className="select__dropdown">

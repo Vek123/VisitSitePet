@@ -119,6 +119,24 @@ button {
   flex-grow: 1;
 }
 
+.form {
+  &__title {
+    margin-bottom: 50px;
+    text-align: center;
+    color: rgb(var(--color-main));
+  }
+  &__item {
+    margin-bottom: 25px;
+    .form {
+      &__title {
+        margin-bottom: 10px;
+        text-align: start;
+        color: rgb(var(--color-black));
+      }
+    }
+  }
+}
+
 .template-container {
   width: 1300px;
   margin: 0 auto;

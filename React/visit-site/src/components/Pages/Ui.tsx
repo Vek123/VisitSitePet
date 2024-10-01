@@ -7,6 +7,7 @@ import TextInput from '../UI/TextInput';
 import TextArea from '../UI/TextArea';
 import Select from '../UI/Select';
 import Checkbox from '../UI/Checkbox';
+import Button from '../UI/Button';
 
 interface UiProps {
     pageName: string,
@@ -27,6 +28,10 @@ function Ui(props: UiProps) {
                     <TextArea className="" placeHolder="Введите сообщение" name='message' errorMessage="Это поле обязательно для заполнения и должно содержать минимум 5 символов."/>
                     <Select className="" name="resume" required={false} inputId='select' items={[{data: "Fullstack Developer"}, {data: "Backend Developer"}, {data: "Frontend Developer"}]}/>
                     <Checkbox className='' name='checkbox' checked={true} text='Текст к кнопке типа Checkbox' inputId='checkbox'/>
+                    <br />
+                    <Button className='' link='/' text='Кнопка ссылка'/>
+                    <br />
+                    <Button className='' text='Кнопка' reversed={true}/>
                 </div>
             </section>
         </>

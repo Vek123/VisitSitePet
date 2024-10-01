@@ -1,0 +1,27 @@
+.button {
+    display: block;
+    text-align: center;
+    width: 100%;
+    padding: 15px;
+    background-color: rgb(var(--color-main));
+    color: rgb(var(--color-white));
+    @include fontAdaptive(18px, 24px, 400);
+    border-radius: 30px;
+    border: 1px solid transparent;
+    transition: background-color var(--main-hover-delay), border-color var(--main-hover-delay), color var(--main-hover-delay);
+    &:hover {
+        background-color: transparent;
+        border-color: rgb(var(--color-main));
+        color: rgb(var(--color-main));
+    }
+    &--reversed {
+        background-color: transparent;
+        color: rgb(var(--color-main));
+        border-color: rgb(var(--color-main));
+        &:hover {
+            background-color: rgb(var(--color-main));
+            color: rgb(var(--color-white));
+            border-color: transparent;
+        }
+    }
+}
